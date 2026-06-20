@@ -12,6 +12,8 @@ A config-driven visual pipeline builder with a node-based editor, real-time vari
 
 WorkflowStudio lets users build data pipelines by dragging, connecting, and configuring nodes on an interactive canvas. It validates pipeline structure (DAG detection) and can be extended with custom node types through a simple config-driven architecture.
 
+
+
 <img width="512" height="238" alt="image" src="https://github.com/user-attachments/assets/90014e7a-a678-4044-8f32-f509cd78852f" />
 
 
