@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 import { useState, useRef, useCallback } from 'react';
-import ReactFlow, { Background, MiniMap } from 'reactflow';
+import ReactFlow, { Background, MiniMap, Controls } from 'reactflow';
 import { useStore } from './store';
 import { shallow } from 'zustand/shallow';
 import { nodeTypes } from './nodes/nodeTypes';
@@ -120,6 +120,7 @@ export const PipelineUI = () => {
                   pannable
                   zoomable
                 />
+                <Controls className="vs-controls" />
             </ReactFlow>
         </div>
     )

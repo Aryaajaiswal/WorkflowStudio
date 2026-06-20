@@ -187,11 +187,22 @@ body {
   padding: 6px;
 }
 
+.vs-controls {
+  display: flex;
+  flex-direction: column;
+}
+
 .react-flow__controls-button {
   background: var(--panel-bg-raised);
   border-bottom: 1px solid var(--panel-border-soft);
   fill: var(--text-secondary);
   stroke: var(--text-secondary);
+  width: 28px;
+  height: 28px;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--panel-bg);
 }
 
 .react-flow__controls-button:hover {
