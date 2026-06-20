@@ -12,7 +12,7 @@ export const PipelineToolbar = () => {
           <Workflow size={18} strokeWidth={2.25} />
         </span>
         <div className="vs-toolbar-brand-text">
-          <span className="vs-toolbar-title">Pipeline Editor</span>
+          <span className="vs-toolbar-title">WorkflowStudio</span>
           <span className="vs-toolbar-subtitle">Drag a block onto the board to wire it in</span>
         </div>
       </div>
