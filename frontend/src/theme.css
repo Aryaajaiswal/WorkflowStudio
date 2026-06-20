@@ -1,0 +1,60 @@
+/* ==========================================================================
+   theme.css — Design tokens for the pipeline editor
+   Concept: a signal board. Pipelines are circuits; nodes are components;
+   edges are traces carrying current. Dark slate board, copper/amber signal
+   accent, cool blues for structure, IBM Plex for a technical-schematic feel.
+   ========================================================================== */
+
+:root {
+  /* ---- Surfaces ---- */
+  --board-bg: #0e1117;
+  --board-grid-dot: #1c2230;
+  --panel-bg: #161b26;
+  --panel-bg-raised: #1b2230;
+  --panel-border: #2a3245;
+  --panel-border-soft: #232a3a;
+
+  /* ---- Text ---- */
+  --text-primary: #e8ecf4;
+  --text-secondary: #8e98ad;
+  --text-tertiary: #5c6478;
+  --text-on-accent: #0e1117;
+
+  /* ---- Signal accent (amber/copper — "current") ---- */
+  --signal: #f0a23c;
+  --signal-bright: #ffc169;
+  --signal-dim: rgba(240, 162, 60, 0.16);
+  --signal-border: rgba(240, 162, 60, 0.45);
+
+  /* ---- Category colors (each node family gets an identity) ---- */
+  --cat-io: #4fb6e8;        /* input/output — cool blue */
+  --cat-io-dim: rgba(79, 182, 232, 0.14);
+  --cat-model: #c084f5;     /* LLM/model — violet */
+  --cat-model-dim: rgba(192, 132, 245, 0.14);
+  --cat-text: #56d6a8;      /* text/transform — mint */
+  --cat-text-dim: rgba(86, 214, 168, 0.14);
+  --cat-logic: #f0a23c;     /* logic/control — amber */
+  --cat-logic-dim: rgba(240, 162, 60, 0.14);
+  --cat-data: #f56c8a;      /* data ops — rose */
+  --cat-data-dim: rgba(245, 108, 138, 0.14);
+
+  /* ---- Status ---- */
+  --success: #56d6a8;
+  --danger: #f56c6c;
+  --warning: #f0a23c;
+
+  /* ---- Type ---- */
+  --font-display: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+
+  /* ---- Shape & shadow ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-node: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.28);
+  --shadow-node-selected: 0 0 0 1.5px var(--signal-border), 0 8px 28px rgba(240, 162, 60, 0.18);
+  --shadow-panel: 0 4px 16px rgba(0, 0, 0, 0.35);
+
+  /* ---- Motion ---- */
+  --ease-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
