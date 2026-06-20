@@ -14,7 +14,7 @@ WorkflowStudio lets users build data pipelines by dragging, connecting, and conf
 
 
 
-<img width="718" height="333" alt="Screenshot 2026-06-20 234645" src="https://github.com/user-attachments/assets/6a045812-d2c8-446a-a034-68ce6c9af086" />
+<img width="956" height="434" alt="Screenshot 2026-06-20 234246" src="https://github.com/user-attachments/assets/565edf0f-9c8d-4a1d-92a5-6eb8fe3e5cd6" />
 
 
 
