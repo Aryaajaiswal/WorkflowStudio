@@ -150,6 +150,43 @@ body {
   border: 1px solid var(--panel-border);
 }
 
+.vs-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.vs-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg-raised);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 140ms var(--ease-snap), color 140ms var(--ease-snap);
+}
+
+.vs-toolbar-btn:hover:not(:disabled) {
+  border-color: var(--signal-border);
+  color: var(--text-primary);
+}
+
+.vs-toolbar-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.vs-toolbar-btn--icon {
+  padding: 6px;
+}
+
 .react-flow__controls-button {
   background: var(--panel-bg-raised);
   border-bottom: 1px solid var(--panel-border-soft);
@@ -610,6 +647,11 @@ body {
   color: var(--danger);
 }
 
+.vs-modal-icon--info {
+  background: rgba(79, 182, 232, 0.14);
+  color: var(--cat-io);
+}
+
 .vs-modal-title {
   margin: 0 0 14px;
   font-size: 16px;
@@ -672,6 +714,54 @@ body {
 .vs-modal-close {
   width: 100%;
   justify-content: center;
+}
+
+.vs-modal--shortcuts {
+  width: 320px;
+}
+
+.vs-shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.vs-shortcut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.vs-shortcut-keys {
+  display: flex;
+  gap: 4px;
+}
+
+.vs-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 24px;
+  padding: 0 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--panel-bg-raised);
+  border: 1px solid var(--panel-border);
+  border-radius: 5px;
+  border-bottom-width: 2px;
+}
+
+.vs-shortcut-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: right;
 }
 
 /* ---------------------------------------------------------------------- */

@@ -1,16 +1,21 @@
 // store.js
 
 import { create } from "zustand";
+import { persist } from 'zustand/middleware';
 import {
     addEdge,
     applyNodeChanges,
     applyEdgeChanges,
     MarkerType,
   } from 'reactflow';
+import { getLayoutedElements } from './layout';
 
-export const useStore = create((set, get) => ({
+export const useStore = create(
+  persist(
+    (set, get) => ({
     nodes: [],
     edges: [],
+    nodeIDs: {},
     getNodeID: (type) => {
         const newIDs = {...get().nodeIDs};
         if (newIDs[type] === undefined) {
@@ -25,6 +30,7 @@ export const useStore = create((set, get) => ({
             nodes: [...get().nodes, node]
         });
     },
+    setNodes: (nodes) => set({ nodes }),
     onNodesChange: (changes) => {
       set({
         nodes: applyNodeChanges(changes, get().nodes),
@@ -68,4 +74,11 @@ export const useStore = create((set, get) => ({
         ),
       });
     },
-  }));
+    autoLayout: () => {
+      const { nodes, edges } = get();
+      const layouted = getLayoutedElements(nodes, edges);
+      set({ nodes: layouted });
+    },
+  }),
+  { name: 'workflow-studio' }
+));

@@ -1,10 +1,11 @@
-// toolbar.js
-
 import { DraggableNode } from './draggableNode';
 import { paletteEntries } from './nodes/nodeTypes';
-import { Workflow } from 'lucide-react';
+import { Workflow, Layout, Keyboard } from 'lucide-react';
+import { useStore } from './store';
 
-export const PipelineToolbar = () => {
+export const PipelineToolbar = ({ onAutoLayout, onToggleShortcuts }) => {
+  const nodes = useStore((s) => s.nodes);
+
   return (
     <header className="vs-toolbar">
       <div className="vs-toolbar-brand">
@@ -13,7 +14,7 @@ export const PipelineToolbar = () => {
         </span>
         <div className="vs-toolbar-brand-text">
           <span className="vs-toolbar-title">WorkflowStudio</span>
-          <span className="vs-toolbar-subtitle">Drag a block onto the board to wire it in</span>
+          <span className="vs-toolbar-subtitle">visual pipeline builder</span>
         </div>
       </div>
       <div className="vs-toolbar-palette">
@@ -26,6 +27,24 @@ export const PipelineToolbar = () => {
             category={entry.category}
           />
         ))}
+      </div>
+      <div className="vs-toolbar-actions">
+        <button
+          className="vs-toolbar-btn"
+          onClick={onAutoLayout}
+          disabled={nodes.length < 2}
+          title="Auto-layout nodes"
+        >
+          <Layout size={14} strokeWidth={2.25} />
+          Layout
+        </button>
+        <button
+          className="vs-toolbar-btn vs-toolbar-btn--icon"
+          onClick={onToggleShortcuts}
+          title="Keyboard shortcuts"
+        >
+          <Keyboard size={14} strokeWidth={2.25} />
+        </button>
       </div>
     </header>
   );
